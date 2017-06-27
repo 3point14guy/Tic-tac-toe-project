@@ -12,14 +12,128 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>Tic-Tac-Toe</h1>
+<div class="conatiner">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+  <div class="row">
+    <div class="col-xs-12 box">
+      <p class="instructions">Player 1, choose    </p><button type="button" value="X"> X </button>
+      <p class="instructions">or    </p>
+      <button type="button" value="O"> O </button>
+    </div>
+    <div class="col-xs-6 box">
+    </div>
+  </div>
+</div>
+<div class="game-board container">
+  <div class="game-row row">
+    <div class="squares square-one col-xs-1 box">
+    <p>x</p>
+    </div>
+    <div id="square-one" class="squares square-two col-xs-1 box">
+      <p>o</p>
+    </div>
+    <div class="squares square-three col-xs-1 box">
+      <p>x</p>
+    </div>
+  </div>
+  <div class="game-row row">
+    <div class="squares square-four col-xs-1 box">
+      <p>o</p>
+    </div>
+    <div class="squares square-five col-xs-1 box">
+      <p>x</p>
+    </div>
+    <div class="squares square-six col-xs-1 box">
+      <p>o</p>
+    </div>
+  </div>
+  <div class="game-row row">
+    <div class="squares square-seven col-xs-1 box">
+      <p>o</p>
+    </div>
+    <div class="squares square-eight col-xs-1 box">
+      <p> </p>
+    </div>
+    <div class="squares square-nine col-xs-1 box">
+      <p>x</p>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-login">
+  Login
+</button>
+      <div class="modal fade" id="submit-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">User Login</h4>
+            </div>
+            <div class="modal-body">
+              <form id="signUp">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" name="form[email]" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" name="form[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-register">
+  Register
+</button>
+      <div class="modal fade" id="submit-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">User Login</h4>
+            </div>
+            <div class="modal-body">
+              <form id="signUp">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" name="register[email]" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" name="register[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1"> Confirm Password</label>
+                  <input type="password" name="register[confirm-password]" class="form-control" id="exampleInputPassword1" placeholder="Re-type Password">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </body>
 </html>

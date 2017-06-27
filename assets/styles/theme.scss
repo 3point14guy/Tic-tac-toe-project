@@ -1,0 +1,22 @@
+@import 'colors';
+
+body {
+  background-color: $light-gray;
+}
+
+.squares {
+  height: 80px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 45px;
+}
+
+.instructions {
+  display: inline;
+  font-size: 20px;
+}
