@@ -1,6 +1,17 @@
 'use strict'
 
-const store = {
-}
+let currentMarker
+let lastMarkerPlayed
+let oppositeMarker
 
-module.exports = store
+// below was in this file by default.  it will be needed at some point
+// const store = {
+//
+// }
+
+module.exports = {
+  // store
+  currentMarker,
+  lastMarkerPlayed,
+  oppositeMarker
+}
