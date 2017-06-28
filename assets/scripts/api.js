@@ -31,11 +31,10 @@ const changePassword = function (data) {
     data
   })
 }
-const logout = function (data) {
-  console.log('api data is', data)
+const logout = function () {
   console.log('api store is', store.user.token)
   return $.ajax({
-    url: config.apiOrigin + store.user.id,
+    url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
