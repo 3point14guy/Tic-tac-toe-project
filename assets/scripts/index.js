@@ -6,36 +6,18 @@ const config = require('./config')
 $(() => {
   setAPIOrigin(location, config)
 })
-
-$('.square-one').on('click', function () {
-  $('.square-one').text('x')
-})
-$('.square-two').on('click', function () {
-  $('.square-two').text('x')
-})
-$('.square-three').on('click', function () {
-  $('.square-three').text('x')
-})
-$('.square-four').on('click', function () {
-  $('.square-four').text('x')
-})
-$('.square-five').on('click', function () {
-  $('.square-five').text('x')
-})
-$('.square-six').on('click', function () {
-  $('.square-six').text('x')
-})
-$('.square-seven').on('click', function () {
-  $('.square-seven').text('x')
-})
-$('.square-eight').on('click', function () {
-  $('.square-eight').text('x')
-})
-$('.square-nine').on('click', function () {
-  $('.square-nine').text('x')
-})
-// $('.squareOne').on('click', insertMarker() {
-//     squareone = 'x'
+// follow the template in the lines below
+// const bookEvents = require('./books/events')
+// $(() => {
+//   $('#books-search').on('submit', bookEvents.onGetBooks)
+//   $('#book-search').on('submit', bookEvents.getOneBook)
+//   $('#request-delete').on('submit', bookEvents.deleteOneBook)
 // })
+const events = require('./events.js')
+
+// On document ready
+$(() => {
+  events.addHandlers()
+})
 
 require('./example')
