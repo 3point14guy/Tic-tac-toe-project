@@ -1,0 +1,5 @@
+'use strict'
+// IS THS THE HOST WE ARE SUPPOSED TO USE???????????????
+module.exports = {
+  host: 'https://ga-library-api.herokuapp.com'
+}
