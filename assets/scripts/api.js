@@ -1,7 +1,7 @@
 'use strict'
 
-const config = require('../config')
-const store = require('../store')
+const config = require('./config')
+const store = require('./store')
 
 const signUp = function (data) {
   console.log('api data is', data)
@@ -35,7 +35,7 @@ const logout = function (data) {
   console.log('api data is', data)
   console.log('api store is', store.user.token)
   return $.ajax({
-    url: config.apiOrigin + '/change-password/' + store.user.id,
+    url: config.apiOrigin + store.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

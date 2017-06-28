@@ -7,7 +7,7 @@
 //   console.table(data.books)
 // }
 'use strict'
-const store = require('../store')
+const store = require('./store')
 
 const signUpSuccess = (data) => {
   console.log(data)
