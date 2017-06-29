@@ -6,18 +6,29 @@ const config = require('./config')
 $(() => {
   setAPIOrigin(location, config)
 })
-// follow the template in the lines below
-// const bookEvents = require('./books/events')
-// $(() => {
-//   $('#books-search').on('submit', bookEvents.onGetBooks)
-//   $('#book-search').on('submit', bookEvents.getOneBook)
-//   $('#request-delete').on('submit', bookEvents.deleteOneBook)
-// })
+
 const events = require('./events.js')
 
-// On document ready
 $(() => {
   events.addHandlers()
+})
+// const turn = 0
+
+let clickCounter = 1
+$('.squares').on('click', function (event) {
+  event.preventDefault()
+  if ($(event.target).text() === 'x' || $(event.target).text() === 'o') {
+    return
+  } else if (clickCounter === 1) {
+    $(event.target).text('x')
+    clickCounter++
+  } else if (clickCounter % 2 === 0) {
+    $(event.target).text('o')
+    clickCounter++
+  } else if (clickCounter % 2 === 1) {
+    $(event.target).text('x')
+    clickCounter++
+  }
 })
 
 require('./example')
