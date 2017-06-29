@@ -1,12 +1,7 @@
 'use strict'
 
-// const onSuccess = function (data) {
-//   // if (data.book){
-//   //   console.log(data.book)
-//   // } else {
-//   console.table(data.books)
-// }
-'use strict'
+// defines messages to present to user about the status of actions they commit
+
 const store = require('./store')
 
 const signUpSuccess = (data) => {

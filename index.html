@@ -19,13 +19,15 @@
 
     <div class="row">
       <div class="col-xs-12 box">
-        <!-- need special code below to style the x -->
-        <p class="instructions">variableUser plays first as <mark class="game-marker">X</mark></p>
+        <p class="instructions">variableUser plays first as <mark
+          class="game-marker">X</mark></p>
       </div>
       <div class="col-xs-6 box">
       </div>
     </div>
   </div>
+  <!-- these divs build the game board.  Ids and classes allow me to target dif
+  ferent parts-->
   <div class="game-board container" id="game-board">
     <div class="game-row row">
       <div class="squares square-one col-xs-1 ">
@@ -62,6 +64,8 @@
     </div>
   </div>
   <br/>
+  <!-- start of code for modals. names are used with getFormFields to present
+inputs in the correct format for the api-->
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -88,7 +92,7 @@ Create Login
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
                 </form>
               </div>
               <div class="modal-footer">
@@ -110,7 +114,7 @@ Create Login
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">User Login</h4>
+                <h4 class="modal-title" id="myModalLabel">Create Login</h4>
               </div>
               <div class="modal-body">
                 <form id="sign-up">
@@ -126,7 +130,7 @@ Create Login
                     <label for="exampleInputPassword1"> Confirm Password</label>
                     <input type="password" name="credentials[password_confirmation]" class="form-control" id="exampleInputPassword1" placeholder="Re-type Password">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit"  data-dismiss="modal" class="btn btn-default">Submit</button>
                 </form>
               </div>
               <div class="modal-footer">
@@ -155,7 +159,7 @@ Create Login
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Are you sure you want to start a new game?</h4>
               </div>
-              <button type="submit" class="btn btn-default">Yes, start a new game.</button>
+              <button id="reset-game" type="submit" data-dismiss="modal" class="btn btn-default">Yes, start a new game.</button>
             </div>
             <div class="modal-footer">
 
@@ -173,7 +177,7 @@ Create Login
           <h4 class="modal-title" id="myModalLabel">Are you sure you want to log out?</h4>
         </div>
         <form id="logout">
-          <button type="submit" class="btn btn-default">Yes, log out</button>
+          <button type="submit" data-dismiss="modal" class="btn btn-default">Yes, log out</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -203,7 +207,7 @@ Create Login
               <input type="password" name="passwords[new]" class="form-control" id="newPassword" placeholder="New Password">
             </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" data-dismiss="modal" class="btn btn-default">Submit</button>
           </form>
         </div>
         <div class="modal-footer">
