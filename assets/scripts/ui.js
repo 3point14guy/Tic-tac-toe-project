@@ -11,6 +11,14 @@ const signUpSuccess = (data) => {
 const signInSuccess = (data) => {
   store.user = data.user
   console.log(store.user)
+  // trying to close modal box after submit
+  // $('#submit').submit(function () {
+  //   $('#sign-in').modal('hide')
+  //   return false
+  // })
+}
+const signInFailure = (error) => {
+  console.log('Three was an error logging in to the accout', error)
 }
 const signUpFailure = (error) => {
   console.error('There was an error creating the account ', error)
@@ -24,6 +32,10 @@ const passwordChangeFailure = function (error) {
 }
 const logoutSuccess = function () {
   console.log('You are now logged out.')
+  // trying to close modal box after submit
+  // $('#logout').click(function () {
+  //   $('#logout').hide(1000)
+  // })
 }
 
 const logoutFailure = function (error) {
@@ -34,6 +46,7 @@ module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
+  signInFailure,
   passwordChangeSuccess,
   passwordChangeFailure,
   logoutSuccess,
