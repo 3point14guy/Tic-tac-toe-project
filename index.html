@@ -1,90 +1,161 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Tic-Tac-Toe</h1>
-<div class="conatiner">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <div class="row">
-    <div class="col-xs-12 box">
-      <!-- need special code below to style the x -->
-      <p class="instructions">variableUser plays first as <mark class="game-marker">X</mark></p>
-    </div>
-    <div class="col-xs-6 box">
-    </div>
-  </div>
-</div>
-<div class="game-board container">
-  <div class="game-row row">
-    <div class="squares square-one col-xs-1 box">
-    <p>x</p>
-    </div>
-    <div id="square-one" class="squares square-two col-xs-1 box">
-      <p>o</p>
-    </div>
-    <div class="squares square-three col-xs-1 box">
-      <p>x</p>
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <h1>Tic-Tac-Toe</h1>
+  <div class="conatiner">
+
+    <div class="row">
+      <div class="col-xs-12 box">
+        <!-- need special code below to style the x -->
+        <p class="instructions">variableUser plays first as <mark class="game-marker">X</mark></p>
+      </div>
+      <div class="col-xs-6 box">
+      </div>
     </div>
   </div>
-  <div class="game-row row">
-    <div class="squares square-four col-xs-1 box">
-      <p>o</p>
+  <div class="game-board container" id="game-board">
+    <div class="game-row row">
+      <div class="squares square-one col-xs-1 ">
+        <p></p>
+      </div>
+      <div id="square-one" class="squares square-two col-xs-1 ">
+        <p></p>
+      </div>
+      <div class="squares square-three col-xs-1 ">
+        <p></p>
+      </div>
     </div>
-    <div class="squares square-five col-xs-1 box">
-      <p>x</p>
+    <div class="game-row row">
+      <div class="squares square-four col-xs-1 ">
+        <p></p>
+      </div>
+      <div class="squares square-five col-xs-1 ">
+        <p></p>
+      </div>
+      <div class="squares square-six col-xs-1 ">
+        <p></p>
+      </div>
     </div>
-    <div class="squares square-six col-xs-1 box">
-      <p>o</p>
+    <div class="game-row row">
+      <div class="squares square-seven col-xs-1 ">
+        <p></p>
+      </div>
+      <div class="squares square-eight col-xs-1 ">
+        <p></p>
+      </div>
+      <div class="squares square-nine col-xs-1 ">
+        <p></p>
+      </div>
     </div>
   </div>
-  <div class="game-row row">
-    <div class="squares square-seven col-xs-1 box">
-      <p>o</p>
-    </div>
-    <div class="squares square-eight col-xs-1 box">
-      <p> </p>
-    </div>
-    <div class="squares square-nine col-xs-1 box">
-      <p>x</p>
-    </div>
-  </div>
-</div>
-<br/>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-login">
+  <br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-login">
   Login
 </button>
-      <div class="modal fade" id="submit-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">User Login</h4>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-register">
+Create Login
+</button>
+        <div class="modal fade" id="submit-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">User Login</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-in">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+
+              </div>
             </div>
-            <div class="modal-body">
-              <form id="sign-in">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="modal fade" id="submit-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">User Login</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> Confirm Password</label>
+                    <input type="password" name="credentials[password_confirmation]" class="form-control" id="exampleInputPassword1" placeholder="Re-type Password">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log-out">Log Out</button>
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-change-password">Change Password</button>
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#resetGameBoard"> Start a new Game</button>
+
+        <div class="modal fade" id="resetGameBoard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure you want to start a new game?</h4>
+              </div>
+              <button type="submit" class="btn btn-default">Yes, start a new game.</button>
             </div>
             <div class="modal-footer">
 
@@ -94,109 +165,54 @@
       </div>
     </div>
   </div>
-</div>
-<br/>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-register">
-  Create Login
-</button>
-      <div class="modal fade" id="submit-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">User Login</h4>
-            </div>
-            <div class="modal-body">
-              <form id="sign-up">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1"> Confirm Password</label>
-                  <input type="password" name="credentials[password_confirmation]" class="form-control" id="exampleInputPassword1" placeholder="Re-type Password">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-            </div>
-          </div>
+  <div class="modal fade" id="log-out" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Are you sure you want to log out?</h4>
         </div>
+        <form id="logout">
+          <button type="submit" class="btn btn-default">Yes, log out</button>
+        </form>
       </div>
-    </div>
-  </div>
-</div>
-<br/>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
+      <div class="modal-footer">
 
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log-out">
-  Log Out
-</button>
-
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-change-password">
-Change Password
-</button>
-
-      <div class="modal fade" id="log-out" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Are you sure you want to log out?</h4>
-            </div>
-            <form id="logout">
-                <button type="submit" class="btn btn-default">Yes, log out</button>
-            </form>
-            </div>
-            <div class="modal-footer">
-
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
 
 
-      <div class="modal fade" id="submit-change-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Password Reset</h4>
-            </div>
-            <div class="modal-body">
-              <form id="change-password">
-                <div class="form-group">
-                  <label for="currentPassword">Current Password</label>
-                  <input name="passwords[old]" type="password" class="form-control" id="currentPassword" placeholder="Current Password">
-                </div>
-                <div class="form-group">
-                  <label for="newPassword">New Password</label>
-                  <input type="password" name="passwords[new]" class="form-control" id="newPassword" placeholder="New Password">
-                </div>
 
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
+  <div class="modal fade" id="submit-change-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Password Reset</h4>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <div class="form-group">
+              <label for="currentPassword">Current Password</label>
+              <input name="passwords[old]" type="password" class="form-control" id="currentPassword" placeholder="Current Password">
             </div>
-            <div class="modal-footer">
+            <div class="form-group">
+              <label for="newPassword">New Password</label>
+              <input type="password" name="passwords[new]" class="form-control" id="newPassword" placeholder="New Password">
             </div>
-          </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
         </div>
       </div>
     </div>
-<br/>
+  </div>
+  <br/>
 
-    </body>
+</body>
+
 </html>
