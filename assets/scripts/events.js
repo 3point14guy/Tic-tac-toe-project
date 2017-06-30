@@ -21,8 +21,8 @@ const onSignUp = function (event) {
   console.log(data)
   event.preventDefault()
   api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .then(ui.signUpSuccess) // defines what to do on success
+    .catch(ui.signUpFailure)// defines what to do on failure
 }
 const onSignIn = function (event) {
   const data = getFormFields(this)
@@ -51,20 +51,13 @@ const onLogout = function (event) {
     .catch(ui.logoutFailure)
 }
 
-const addHandlers = () => {
+const addHandlers = () => {  // defines all these event hanlers as a constant that can be passed to other files
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#logout').on('submit', onLogout)
 }
 
-module.exports = {
+module.exports = { // tells to make these variables available to other files
   addHandlers
 }
-
-// module.exports = {
-
-  // onGetBooks,
-  // getOneBook,
-  // deleteOneBook
-// }

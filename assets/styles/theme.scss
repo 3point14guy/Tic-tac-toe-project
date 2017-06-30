@@ -1,4 +1,4 @@
-@import 'colors';
+@import 'colors'; // moves variables over from colors.scss file
 
 body {
   background-color: $light-gray;
@@ -25,4 +25,12 @@ p {
 .game-marker {
   background-color: $light-gray;
   font-size: 35px;
+}
+
+.win-view {
+  display: none;
+}
+
+.tie-view {
+  display: none;
 }

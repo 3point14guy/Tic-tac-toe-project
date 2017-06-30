@@ -3,10 +3,12 @@
 const config = require('./config')
 const store = require('./store')
 
+// these functions tell the site how to pass info to the api for the various
+// actions we would like to perform as indicated by the variable names
 const signUp = function (data) {
   console.log('api data is', data)
   return $.ajax({
-    url: config.apiOrigin + '/sign-up',
+    url: config.apiOrigin + '/sign-up/',
     method: 'POST',
     data
   })
@@ -14,7 +16,7 @@ const signUp = function (data) {
 const signIn = function (data) {
   console.log('api data is', data)
   return $.ajax({
-    url: config.apiOrigin + '/sign-in',
+    url: config.apiOrigin + '/sign-in/',
     method: 'POST',
     data
   })
