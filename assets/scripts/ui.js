@@ -5,33 +5,41 @@
 const store = require('./store')
 
 const signUpSuccess = (data) => {
-  console.log(data)
-  console.log(data.user.email + ' now has an account')
+  $('.sign-up-message').text(data.user.email + ' now has an account. Please login.')
 }
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log(store.user)
+  // $('.login-buttons').hide() ****this makes game unplayable
+  $('.logout-buttons').show(300)
+  $('.login-message').text(data.user.email + ' You have successfully logged in.')
   // trying to close modal box after submit
   // $('#submit').submit(function () {
-  //   $('#sign-in').modal('hide')
+  // $('#submit-login').hide(300)
+  // $('document').show()
   //   return false
   // })
 }
 const signInFailure = (error) => {
-  console.log('Three was an error logging in to the accout', error)
+  $('.login-message').text('Login failure. ', error)
 }
 const signUpFailure = (error) => {
-  console.error('There was an error creating the account ', error)
+  $('.sign-up-message').text('There was an error creating the account ', error)
 }
 
 const passwordChangeSuccess = function () {
-  console.log('Password changed!')
+  $('.change-pswrd-message').text('Password changed!')
 }
 const passwordChangeFailure = function (error) {
-  console.log('password change failed', error)
+  $('.change-pswrd-message').text('Password change failed', error)
 }
 const logoutSuccess = function () {
-  console.log('You are now logged out.')
+  $('.logout-message').text('You are now logged out.')
+  $('.game-logo').show()
+  $('.gameboard').hide()
+  $('.logout-buttons').hide()
+  $('.win-view-x').hide()
+  $('.tie-view').hide()
+  $('.instructions').hide()
   // trying to close modal box after submit
   // $('#logout').click(function () {
   //   $('#logout').hide(1000)
@@ -39,9 +47,18 @@ const logoutSuccess = function () {
 }
 
 const logoutFailure = function (error) {
-  console.log('There was an error logging out.', error)
+  $('.logout-message').text('Oops! Something went wrong.', error)
 }
 
+const createGameSuccess = function () {
+  // console.log('Created new game')
+  return
+}
+
+const createGameFailure = function () {
+  // console.log('Your create game failed')
+  return
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -50,5 +67,7 @@ module.exports = {
   passwordChangeSuccess,
   passwordChangeFailure,
   logoutSuccess,
-  logoutFailure
+  logoutFailure,
+  createGameFailure,
+  createGameSuccess
 }

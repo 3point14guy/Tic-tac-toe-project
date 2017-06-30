@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Tic Tac Toe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -13,47 +13,66 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-<body class="container-fluid">
-  <h1>Tic-Tac-Toe</h1>
+<body class="show container-fluid">
+  <h1 class="title-hide">Tic-Tac-Toe</h1>
   <div class="conatiner">
-
     <div class="row">
       <div class="col-xs-12 box">
         <p class="instructions">X plays first</p>
-      <div class="col-xs-6 box">
-      </div>
     </div>
+  </div>
+  <br/>
+  <!-- these hold hidden pictures to be shown during win or draw -->
+  <div class="win-view-x col-sm-offset-3"> <img alt='rocky' src='assets/images/giphy-downsized.gif'/>
+  </div>
+  <div class="win-view-o col-sm-offset-4"> <img alt='rocky' src='assets/images/itches.gif'/>
+  </div>
+  <div class="tie-view col-sm-offset-4"> <img alt='tie' src='assets/images/tie.gif'/>
   </div>
   <!-- these divs build the game board.  Ids and classes allow me to target dif
   ferent parts-->
-  <div class="win-view"> <img alt='rocky' src='assets/images/giphy-downsized.gif'/>
-  </div>
-  <div class="tie-view"> <img alt='tie' src='assets/images/tie.gif'/>
-  </div>
   <div class="game-board container" id="game-board">
     <div class="game-row row">
-      <div class="squares square-one col-xs-1 "></div>
+      <div class="squares square-one col-xs-1 col-xs-offset-4"></div>
       <div id="square-one" class="squares square-two col-xs-1 "></div>
       <div class="squares square-three col-xs-1 "></div>
     </div>
     <div class="game-row row">
-      <div class="squares square-four col-xs-1 "></div>
+      <div class="squares square-four col-xs-1 col-xs-offset-4"></div>
       <div class="squares square-five col-xs-1 "></div>
       <div class="squares square-six col-xs-1 "></div>
     </div>
     <div class="game-row row">
-      <div class="squares square-seven col-xs-1 "></div>
+      <div class="squares square-seven col-xs-1 col-xs-offset-4"></div>
       <div class="squares square-eight col-xs-1 "></div>
       <div class="squares square-nine col-xs-1 "></div>
     </div>
   </div>
-
+  <!-- game logo for display prior to login-->
+  <div class="game-logo container">
+    <div class="game-row row">
+      <div class="squares square-one col-xs-1 col-xs-offset-4"><p>T</p></div>
+      <div class="squares square-two col-xs-1 "><p>I</p></div>
+      <div class="squares square-three col-xs-1 "><p>C</div>
+    </div>
+    <div class="game-row row">
+      <div class="squares square-four col-xs-1 col-xs-offset-4"><p>T</p></div>
+      <div class="squares square-five col-xs-1 "><p>A</p></div>
+      <div class="squares square-six col-xs-1 "><p>C</p></div>
+    </div>
+    <div class="game-row row">
+      <div class="squares square-seven col-xs-1 col-xs-offset-4"><p>T</p></div>
+      <div class="squares square-eight col-xs-1 "><p>O</p></div>
+      <div class="squares square-nine col-xs-1 "><p>E</p></div>
+    </div>
+  </div>
+</div>
   <br/>
   <!-- start of code for modals. names are used with getFormFields to present
 inputs in the correct format for the api-->
-  <div class="container">
+  <div class="login-buttons container">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-6  col-sm-offset-4">
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-login">
   Login
 </button>
@@ -80,7 +99,7 @@ Create Login
                   <button id="submit" type="submit" class="btn btn-default">Submit</button>
                 </form>
               </div>
-              <div class="modal-footer">
+              <div class="login-message modal-footer">
 
               </div>
             </div>
@@ -93,7 +112,7 @@ Create Login
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-
+<!-- create account modal -->
         <div class="modal fade" id="submit-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -118,7 +137,7 @@ Create Login
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form>
               </div>
-              <div class="modal-footer">
+              <div class="sign-up-message modal-footer">
               </div>
             </div>
           </div>
@@ -129,13 +148,13 @@ Create Login
   <br/>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-10 col-sm-offset-2">
 
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log-out">Log Out</button>
+        <button type="button" class="logout-buttons btn btn-primary btn-lg" data-toggle="modal" data-target="#log-out">Log Out</button>
 
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-change-password">Change Password</button>
+        <button type="button" class="logout-buttons btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-change-password">Change Password</button>
 
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#resetGameBoard"> Start a new Game</button>
+        <button type="button" class="logout-buttons btn btn-primary btn-lg" data-toggle="modal" data-target="#resetGameBoard"> Start a new Game</button>
 
         <div class="modal fade" id="resetGameBoard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -165,8 +184,8 @@ Create Login
           <button type="submit" class="btn btn-default">Yes, log out</button>
         </form>
       </div>
-      <div class="modal-footer">
-
+      <div class="logout-message modal-footer">
+        <br/>
       </div>
     </div>
   </div>
@@ -195,7 +214,7 @@ Create Login
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
         </div>
-        <div class="modal-footer">
+        <div class="change-pswrd-message modal-footer">
         </div>
       </div>
     </div>

@@ -6,7 +6,9 @@ body {
 
 .squares {
   border: 2px solid $black;
+  font-size: 45px;
   height: 80px;
+  text-align: center;
 }
 
 h1 {
@@ -15,22 +17,40 @@ h1 {
 
 p {
   font-size: 45px;
+  text-align: center;
 }
 
 .instructions {
-  display: inline;
+  display: none;
   font-size: 20px;
+  margin: 30px auto;
+  text-align: center;
 }
 
-.game-marker {
-  background-color: $light-gray;
-  font-size: 35px;
+.win-view-x {
+  display: none;
 }
 
-.win-view {
+.win-view-o {
   display: none;
 }
 
 .tie-view {
   display: none;
+}
+
+.logout-buttons {
+  display: none;
+}
+
+.game-board {
+  display: none;
+}
+
+.title-hide {
+  display: none;
+}
+
+button {
+  margin: 10px 30px;
 }
