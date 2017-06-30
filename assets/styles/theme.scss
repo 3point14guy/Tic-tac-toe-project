@@ -18,13 +18,10 @@ p {
 }
 
 .instructions {
-  display: inline;
+  display: none;
   font-size: 20px;
-}
-
-.game-marker {
-  background-color: $light-gray;
-  font-size: 35px;
+  margin: 30px auto;
+  text-align: center;
 }
 
 .win-view {
@@ -33,4 +30,20 @@ p {
 
 .tie-view {
   display: none;
+}
+
+.logout-buttons {
+  display: none;
+}
+
+.game-board {
+  display: none;
+}
+
+.title-hide {
+  display: none;
+}
+
+button {
+  margin: 10px 30px;
 }

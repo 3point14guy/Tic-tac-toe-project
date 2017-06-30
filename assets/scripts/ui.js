@@ -11,9 +11,16 @@ const signUpSuccess = (data) => {
 const signInSuccess = (data) => {
   store.user = data.user
   console.log(store.user)
+  // $('.login-buttons').hide()
+  $('.logout-buttons').show(300)
+  $('.game-board').show(100)
+  $('.game-logo').hide()
+  $('.title-hide').show(200)
+  $('.instructions').show(250)
   // trying to close modal box after submit
   // $('#submit').submit(function () {
-  //   $('#sign-in').modal('hide')
+  // $('#submit-login').hide(300)
+  // $('document').show()
   //   return false
   // })
 }
@@ -42,6 +49,13 @@ const logoutFailure = function (error) {
   console.log('There was an error logging out.', error)
 }
 
+const createGameSuccess = function () {
+  console.log('Created new game')
+}
+
+const createGameFailure = function (error) {
+  console.log('Your create game failed', error)
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -50,5 +64,7 @@ module.exports = {
   passwordChangeSuccess,
   passwordChangeFailure,
   logoutSuccess,
-  logoutFailure
+  logoutFailure,
+  createGameFailure,
+  createGameSuccess
 }

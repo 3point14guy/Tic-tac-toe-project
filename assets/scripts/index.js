@@ -67,6 +67,7 @@ $(() => {
         $('.square-seven').text() && $('.square-three').text() !== '')) {
       $('.win-view').show()
       $('.game-board').hide()
+      $('.instructions').text('WINNER!')
     } else if (clickCounter === 10) {
       $('.instructions').text('TIE GAME!')
       $('.tie-view').show()

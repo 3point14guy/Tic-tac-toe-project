@@ -26,8 +26,8 @@ const onSignUp = function (event) {
 }
 const onSignIn = function (event) {
   const data = getFormFields(this)
-  console.log(this)
-  console.log(data)
+  // console.log(this)
+  // console.log(data)
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -50,12 +50,20 @@ const onLogout = function (event) {
     .then(ui.logoutSuccess)
     .catch(ui.logoutFailure)
 }
+const createAGame = function (event) {
+  console.log('createAGame function has started')
+  event.preventDefault()
+  api.createGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
+}
 
 const addHandlers = () => {  // defines all these event hanlers as a constant that can be passed to other files
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#logout').on('submit', onLogout)
+  $('#resetGameBoard').on('click', createAGame)
 }
 
 module.exports = { // tells to make these variables available to other files
