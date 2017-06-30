@@ -15,7 +15,7 @@ $(() => {
 let clickCounter = 1
 $(() => {
   // using this to make sure first marker is X
-  $('.squares').on('click', function (event) {
+  $('.squares').on('click', function(event) {
     event.preventDefault() // Listening event for whenever any of the 9 sqrs are clicked
     if ($(event.target).text() === 'x' || $(event.target).text() === 'o') {
       return // if there is a marker there already, it wont overwrite
@@ -34,17 +34,23 @@ $(() => {
     }
   })
 })
-$(() => { // this resets the board at the end of a game
-  let resetSquares = $('.squares').text()
+// this resets the board at the end of a game
+$(() => {
+  let resetSquares = $('.squares').text() // linter says no-unused-vars, but it is used
   $('#reset-game').on('click', function () {
     resetSquares = $('.squares').text('')
-    $('.win-view').hide()
+    $('.win-view-x').hide()
+    $('.win-view-o').hide()
     $('.tie-view').hide()
-    $('.game-board').show()
+    $('.game-logo').hide()
+    $('.title-hide').show(200)
+    $('.instructions').show(250)
+    $('.game-board').show(150)
     clickCounter = 1
     $('.instructions').text('X plays first')
   })
 })
+// tests for wins
 $(() => {
   $('.squares').on('click', function (event) {
     event.preventDefault()
@@ -65,15 +71,18 @@ $(() => {
         $('.square-nine').text() && $('.square-one').text() !== '') ||
       ($('.square-three').text() === $('.square-five').text() && $('.square-three').text() ===
         $('.square-seven').text() && $('.square-three').text() !== '')) {
-      $('.win-view').show()
       $('.game-board').hide()
-      $('.instructions').text('WINNER!')
+      $('.win-view-x').show()
+      const clickCount = clickCounter - 1
+      if (clickCount === 6 || clickCount === 8) {
+        $('.instructions').text('O is the WINNER!')
+      } else $('.instructions').text('X is the WINNER!')
     } else if (clickCounter === 10) {
       $('.instructions').text('TIE GAME!')
       $('.tie-view').show()
       $('.game-board').hide()
     } else {
-      console.log('keep playing')
+      // console.log('keep playing')
       return
     }
   })

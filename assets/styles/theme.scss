@@ -6,7 +6,9 @@ body {
 
 .squares {
   border: 2px solid $black;
+  font-size: 45px;
   height: 80px;
+  text-align: center;
 }
 
 h1 {
@@ -15,6 +17,7 @@ h1 {
 
 p {
   font-size: 45px;
+  text-align: center;
 }
 
 .instructions {
@@ -24,7 +27,11 @@ p {
   text-align: center;
 }
 
-.win-view {
+.win-view-x {
+  display: none;
+}
+
+.win-view-o {
   display: none;
 }
 
