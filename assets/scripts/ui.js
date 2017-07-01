@@ -34,12 +34,12 @@ const passwordChangeFailure = function (error) {
 }
 const logoutSuccess = function () {
   $('.logout-message').text('You are now logged out.')
-  $('.game-logo').show()
-  $('.gameboard').hide()
+  $('.game-board').hide()
   $('.logout-buttons').hide()
   $('.win-view-x').hide()
   $('.tie-view').hide()
   $('.instructions').hide()
+  $('.game-logo').show()
   // trying to close modal box after submit
   // $('#logout').click(function () {
   //   $('#logout').hide(1000)

@@ -15,7 +15,7 @@ $(() => {
 let clickCounter = 1
 $(() => {
   // using this to make sure first marker is X
-  $('.squares').on('click', function(event) {
+  $('.squares').on('click', function (event) {
     event.preventDefault() // Listening event for whenever any of the 9 sqrs are clicked
     if ($(event.target).text() === 'x' || $(event.target).text() === 'o') {
       return // if there is a marker there already, it wont overwrite
