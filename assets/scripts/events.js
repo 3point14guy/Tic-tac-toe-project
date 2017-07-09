@@ -41,12 +41,13 @@ const onLogout = function (event) {
     .catch(ui.logoutFailure)
 }
 const createAGame = function (event) {
-  // console.log('createAGame function has started')
+  console.log('createAGame function has started')
   event.preventDefault()
   api.createGame()
-    // .then(ui.createGameSuccess)// **** These need to be commented out b4 final
-    // .catch(ui.createGameFailure)// **** These need to be commented out b4 final
 }
+// this is for displaying stats functionality
+//
+
 // defines all these event hanlers as a constant that can be passed to other files
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -54,6 +55,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#logout').on('submit', onLogout)
   $('#resetGameBoard').on('click', createAGame)
+  // below is to display user stats functionality
+  // $('#stats').on('click', displayStats)
 }
 
 module.exports = { // tells to make these variables available to other files

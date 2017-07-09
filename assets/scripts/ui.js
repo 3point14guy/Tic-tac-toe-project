@@ -9,13 +9,13 @@ const signUpSuccess = (data) => {
 }
 const signInSuccess = (data) => {
   store.user = data.user
-  // $('.login-buttons').hide() ****this makes game unplayable
-  $('.logout-buttons').show(300)
+  $('.logout-buttons').show(2900)
   $('.login-message').text(data.user.email + ' You have successfully logged in.')
+  $('.login-buttons').hide(2600)
   // trying to close modal box after submit
   // $('#submit').submit(function () {
-  // $('#submit-login').hide(300)
-  // $('document').show()
+  // $('#submit-login').hide(2000)
+  // $('document').show(1500)
   //   return false
   // })
 }
@@ -40,6 +40,8 @@ const logoutSuccess = function () {
   $('.tie-view').hide()
   $('.instructions').hide()
   $('.game-logo').show()
+  $('.login-buttons').show()
+  $('.title-hide').hide()
   // trying to close modal box after submit
   // $('#logout').click(function () {
   //   $('#logout').hide(1000)
