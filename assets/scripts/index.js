@@ -43,9 +43,9 @@ $(() => {
     $('.win-view-o').hide()
     $('.tie-view').hide()
     $('.game-logo').hide()
-    $('.title-hide').show(200)
-    $('.instructions').show(250)
-    $('.game-board').show(150)
+    $('.title-hide').show(400)
+    $('.instructions').show(600)
+    $('.game-board').show(500)
     clickCounter = 1
     $('.instructions').text('X plays first')
   })

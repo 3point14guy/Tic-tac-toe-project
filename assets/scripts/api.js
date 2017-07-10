@@ -44,7 +44,6 @@ const logout = function () {
   })
 }
 const createGame = function () {
-  // console.log('createGame function working')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
@@ -54,7 +53,30 @@ const createGame = function () {
     data: '{}'
   })
 }
+
+// const logGameMoves = function () {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games/' + id,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data:
+//   })
+// }
+// const getGames = function (data) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games[?over]',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 module.exports = {
+// logGameMoves,
+// getGames,
   signUp,
   signIn,
   changePassword,
