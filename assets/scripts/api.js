@@ -64,7 +64,19 @@ const createGame = function () {
 //     data:
 //   })
 // }
+// const getGames = function (data) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games[?over]',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 module.exports = {
+// logGameMoves,
+// getGames,
   signUp,
   signIn,
   changePassword,

@@ -46,7 +46,11 @@ const createAGame = function (event) {
   api.createGame()
 }
 // this is for displaying stats functionality
-//
+
+// const displayStats = function (event) {
+// $('#games-played').text("You've played X games.")
+// $('#gmaes-won').text("You've won Y games!")
+}
 
 // defines all these event hanlers as a constant that can be passed to other files
 const addHandlers = () => {
