@@ -7,12 +7,9 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
-const events = require('./events.js')
-
-$(() => {
-  events.addHandlers() // invokes event handlers
-})
 let clickCounter = 1
+let index // to pass to gameUpdate ajax
+let letter = 'x' // to pass to gameUpdate ajax
 $(() => {
   // using this to make sure first marker is X
   $('.squares').on('click', function (event) {
@@ -21,14 +18,26 @@ $(() => {
       return // if there is a marker there already, it wont overwrite
     } else if (clickCounter === 1) {
       $(event.target).text('x') // will play X on first move
+      letter = 'x'
+      index = $(event.target).data('id')
+      console.log(letter)
+      console.log(index)
       clickCounter++ // then add one to counter
       $('.instructions').text('O\'s turn')
     } else if (clickCounter % 2 === 0) { // if counter is even, O is played
       $(event.target).text('o')
+      letter = 'o'
+      index = $(event.target).data('id')
+      console.log(letter)
+      console.log(index)
       $('.instructions').text('X\'s turn')
       clickCounter++
     } else { // if counter is odd, X is played
       $(event.target).text('x')
+      letter = 'x'
+      index = $(event.target).data('id')
+      console.log(letter)
+      console.log(index)
       $('.instructions').text('O\'s turn')
       clickCounter++
     }
@@ -50,6 +59,7 @@ $(() => {
     $('.instructions').text('X plays first')
   })
 })
+let gameOver = false // to pass to gameUpdate ajax
 // tests for wins
 $(() => {
   $('.squares').on('click', function (event) {
@@ -73,18 +83,35 @@ $(() => {
         $('.square-seven').text() && $('.square-three').text() !== '')) {
       $('.game-board').hide()
       $('.win-view-x').show()
+      gameOver = true
+      console.log(gameOver)
       const clickCount = clickCounter - 1
       if (clickCount === 6 || clickCount === 8) {
         $('.instructions').text('O is the WINNER!')
       } else $('.instructions').text('X is the WINNER!')
     } else if (clickCounter === 10) {
+      gameOver = true
+      console.log(gameOver)
       $('.instructions').text('TIE GAME!')
       $('.tie-view').show()
       $('.game-board').hide()
     } else {
-      // console.log('keep playing')
+      gameOver = false
+      console.log(gameOver)
       return
     }
   })
 })
 require('./example')
+
+const events = require('./events.js') // allows us to use functions from other files
+
+$(() => {
+  events.addHandlers() // invokes event handlers in events file
+})
+
+module.exports = {
+  letter,
+  index,
+  gameOver
+}

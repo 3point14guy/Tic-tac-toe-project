@@ -2,6 +2,7 @@
 
 const config = require('./config')
 const store = require('./store')
+const indexFile = require('./index')
 
 // these functions tell the site how to pass info to the api for the various
 // actions we would like to perform as indicated by the variable names
@@ -54,16 +55,26 @@ const createGame = function () {
   })
 }
 
-// const logGameMoves = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/games/' + id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data:
-//   })
-// }
+const logGameMoves = function (index, letter, gameOver) {
+  console.log('made it to logGameMoves')
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': indexFile.index,
+          'value': indexFile.letter
+        },
+        'over': indexFile.gameOver
+      }
+    }
+  })
+}
+
 // const getGames = function (data) {
 //   return $.ajax({
 //     url: config.apiOrigin + '/games[?over]',
@@ -74,8 +85,9 @@ const createGame = function () {
 //     data
 //   })
 // }
+
 module.exports = {
-// logGameMoves,
+  logGameMoves,
 // getGames,
   signUp,
   signIn,
