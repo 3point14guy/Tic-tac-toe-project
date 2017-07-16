@@ -163,8 +163,8 @@ Create Login
       <div class="col-sm-12 col-sm-offset-4">
         <button type="button" class="logout-buttons btn btn-primary btn-lg"
         data-toggle="modal" data-target="#resetGameBoard"> New Game </button>
-        <button type="button" class="logout-buttons btn btn-primary btn-lg"
-        data-toggle="modal" data-target="#stats"> Game stats </button>
+        <button type="button" id="stats" class="logout-buttons btn btn-primary btn-lg"
+        data-toggle="modal" data-target="stats">How many games have you played?</button>
         <!-- Modal for reset-->
         <div class="modal fade" id="resetGameBoard" tabindex="-1" role="dialog"
         aria-labelledby="myModalLabel">
@@ -248,7 +248,7 @@ Create Login
   </div>
   <br/>
 <!-- Modal for stats-->
-<div class="modal fade" id="stats" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="stats" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -261,15 +261,11 @@ Create Login
           <label for="games-played">Games Played</label>
           <p id="games-played"> number of games played here </p>
         </div>
-        <div>
-          <label for="games-won">Games Won</label>
-          <p id="gmaes-won"> number of games won displayed here </p>
-        </div>
       </div>
     </div>
     <div class="logout-message modal-footer">
     </div>
   </div>
-</div>
+</div> -->
 </body>
 </html>

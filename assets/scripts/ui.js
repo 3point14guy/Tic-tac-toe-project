@@ -52,7 +52,7 @@ const logoutFailure = function (error) {
 
 const createGameSuccess = function (data) {
   store.game = data.game
-  console.log(store.game.id)
+  // console.log(store.game.id)
   return
 }
 const createGameFailure = function () {
@@ -68,7 +68,22 @@ const updateGameFailure = function (data) {
   return
 }
 
+const displayStatsSuccess = function (data) {
+  // store.game = data.game
+  console.log('stats success')
+  $('.instructions').text('Do you want to keep playing?')
+  $('#stats').text(data.games.length + ' games played!')
+  return
+}
+const displayStatsFailure = function (data) {
+  console.log('Ooops, no stats!')
+  $('.instructions').text('Stats unavailable.')
+  return
+}
+
 module.exports = {
+  displayStatsSuccess,
+  displayStatsFailure,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
