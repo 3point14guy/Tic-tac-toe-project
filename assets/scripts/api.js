@@ -54,29 +54,19 @@ const createGame = function () {
   })
 }
 
-// const logGameMoves = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/games/' + id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data:
-//   })
-// }
-// const getGames = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/games[?over]',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+const getStats = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
-// logGameMoves,
-// getGames,
+  getStats,
   signUp,
   signIn,
   changePassword,

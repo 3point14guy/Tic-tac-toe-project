@@ -2,17 +2,20 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const store = require('./store')
+const events = require('./events.js') // allows us to use functions from other files
+
+$(() => {
+  events.addHandlers() // invokes event handlers in events file
+})
 
 $(() => {
   setAPIOrigin(location, config)
 })
-
-const events = require('./events.js')
-
-$(() => {
-  events.addHandlers() // invokes event handlers
-})
+let gameOver = false // to pass to gameUpdate ajax
 let clickCounter = 1
+let position // to pass to gameUpdate ajax
+let letter = 'x' // to pass to gameUpdate ajax
 $(() => {
   // using this to make sure first marker is X
   $('.squares').on('click', function (event) {
@@ -21,14 +24,20 @@ $(() => {
       return // if there is a marker there already, it wont overwrite
     } else if (clickCounter === 1) {
       $(event.target).text('x') // will play X on first move
+      letter = 'x'
+      position = $(event.target).data('id')
       clickCounter++ // then add one to counter
       $('.instructions').text('O\'s turn')
     } else if (clickCounter % 2 === 0) { // if counter is even, O is played
       $(event.target).text('o')
+      letter = 'o'
+      position = $(event.target).data('id')
       $('.instructions').text('X\'s turn')
       clickCounter++
     } else { // if counter is odd, X is played
       $(event.target).text('x')
+      letter = 'x'
+      position = $(event.target).data('id')
       $('.instructions').text('O\'s turn')
       clickCounter++
     }
@@ -50,6 +59,7 @@ $(() => {
     $('.instructions').text('X plays first')
   })
 })
+
 // tests for wins
 $(() => {
   $('.squares').on('click', function (event) {
@@ -73,18 +83,58 @@ $(() => {
         $('.square-seven').text() && $('.square-three').text() !== '')) {
       $('.game-board').hide()
       $('.win-view-x').show()
+      gameOver = true
       const clickCount = clickCounter - 1
       if (clickCount === 6 || clickCount === 8) {
         $('.instructions').text('O is the WINNER!')
       } else $('.instructions').text('X is the WINNER!')
     } else if (clickCounter === 10) {
+      gameOver = true
       $('.instructions').text('TIE GAME!')
       $('.tie-view').show()
       $('.game-board').hide()
     } else {
-      // console.log('keep playing')
+      gameOver = false
       return
     }
   })
 })
+const updateGame = function () {
+  // console.log('starting updateGame')
+  // console.log(position)
+  // console.log(letter)
+  // console.log(gameOver)
+  const data = {
+    'game': {
+      'cell': {
+        'index': position,
+        'value': letter
+      },
+      'over': gameOver
+    }
+  }
+  logGameMoves(data)
+        .then(updateGameSuccess)
+        .catch(updateGameFailure)
+}
+const updateGameSuccess = function (data) {
+  // console.log('success')
+  return
+}
+const updateGameFailure = function (data) {
+  // console.log('Ooops!')
+  return
+}
+$('.squares').on('click', updateGame)
+const logGameMoves = function (data) {
+  // console.log('made it to logGameMoves')
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 require('./example')
