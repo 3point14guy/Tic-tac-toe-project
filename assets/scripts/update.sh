@@ -3,7 +3,7 @@ TOKEN=100
 INDEX=2
 VALUE='x'
 GAMEOVER=false
-curl "https://aqueous-atoll-85096.herokuapp.com/${ID}" \
+curl "https://powerful-scrubland-54674.herokuapp.com/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
