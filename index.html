@@ -32,56 +32,94 @@
   <div class="tie-view col-sm-offset-4"> <img alt='tie'
     src='https://user-images.githubusercontent.com/28842407/27736131-d4fc04a0-5d70-11e7-8bd4-302e0d950ccc.gif'/>
   </div>
-  <!-- these divs build the game board.  Ids and classes allow me to target dif
-  ferent parts-->
+  <!-- these divs build the game board.  Ids and classes allow me to target different parts-->
   <div class="game-board container" id="game-board">
     <div class="game-row row">
-      <div data-id="0" class="squares square-one col-xs-1 col-xs-offset-4"></div>
+      <div data-id="0" class="squares square-one col-xs-1 col-sm-offset-4 col-xs-offset-2"></div>
       <div data-id="1" class="squares square-two col-xs-1 "></div>
       <div data-id="2" class="squares square-three col-xs-1 "></div>
     </div>
     <div class="game-row row">
-      <div data-id="3" class="squares square-four col-xs-1 col-xs-offset-4"></div>
+      <div data-id="3" class="squares square-four col-xs-1 col-sm-offset-4 col-xs-offset-2"></div>
       <div data-id="4" class="squares square-five col-xs-1 "></div>
       <div data-id="5" class="squares square-six col-xs-1 "></div>
     </div>
     <div class="game-row row">
-      <div data-id="6" class="squares square-seven col-xs-1 col-xs-offset-4"></div>
+      <div data-id="6" class="squares square-seven col-xs-1 col-sm-offset-4 col-xs-offset-2"></div>
       <div data-id="7" class="squares square-eight col-xs-1 "></div>
       <div data-id="8" class="squares square-nine col-xs-1 "></div>
     </div>
   </div>
-  <!-- game logo for display prior to login-->
+</div>
+<!-- game logo for display prior to login-->
+
+<div class="spacer-row">
+
+</div>
   <div class="game-logo center-block container">
     <div class="game-row row">
-      <div class="squares1 match col-xs-1 col-xs-offset-4"><p>T</p></div>
+      <div class="col-sm-5 col-xs-2">
+      </div>
+      <div class="squares1 match col-xs-1"><p>T</p></div>
       <div class="squares1 col-xs-1"><p>I</p></div>
       <div class="squares1 col-xs-1"><p>C</div>
     </div>
     <div class="game-row row">
-      <div class="squares1 match col-xs-1 col-xs-offset-4"><p>T</p></div>
-      <div class="squares1 col-xs-1 "><p>A</p></div>
+      <div class="col-sm-5 col-xs-2">
+      </div>
+      <div class="squares1 match col-xs-1"><p>T</p></div>
+      <div class="squares1 col-xs-1"><p>A</p></div>
       <div class="squares1 col-xs-1"><p>C</p></div>
     </div>
     <div class="game-row row">
-      <div class="squares1 match col-xs-1 col-xs-offset-4"><p>T</p></div>
+      <div class="col-sm-5 col-xs-2">
+      </div>
+      <div class="squares1 match col-xs-1"><p>T</p></div>
       <div class="squares1 col-xs-1"><p>O</p></div>
       <div class="squares1 col-xs-1"><p>E</p></div>
     </div>
   </div>
-</div>
-  <br/>
+  <br>
+  <br>
   <!-- start of code for modals. names are used with getFormFields to present
 inputs in the correct format for the api-->
 <div class="login-buttons container">
   <div class="row">
-    <div class="col-sm-12 col-sm-offset-4">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-login">
-  Login
-</button>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-register">
-Create Login
-</button>
+    <div class="col-sm-4 col-xs-2">
+    </div>
+    <div class="col-xs-4">
+      <div class="row">
+        <div class="col-xs-4">
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-login">Login</button>
+        </div>
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#submit-register">Sign Up</button>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+
+
+    <div class="well">
+      <br>
+      <p>This is the first app I ever.  It uses AJAX calls to an API that handles login and recording game statistic.
+      </p><br/>
+      <p>You can sign up yourself or use these credentials:<br/>
+        Login: mom@mom.com<br/>
+        Password: mom
+      </p><br/>
+      <p>Please be patient. This app is hosted on the free tier of Heroku.</p>
+      <br>
+      </div>
     </div>
   </div>
 </div>
